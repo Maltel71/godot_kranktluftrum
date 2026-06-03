@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bf0isnxggn7cg"]
+
+[ext_resource type="Shader" uid="uid://q77rec75yfau" path="res://shaders/scrolling_ground.gdshader" id="1_a4eok"]
+[ext_resource type="Texture2D" uid="uid://c50mc53lvyps0" path="res://textures/ground/env_ground_01_t.png" id="2_id3f7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ysq4"]
+shader = ExtResource("1_a4eok")
+shader_parameter/tiling = Vector2(1, 1)
+
+[node name="Ground_01" type="Node2D" unique_id=1836832381]
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1386942384]
+material = SubResource("ShaderMaterial_7ysq4")
+offset_left = -960.0
+offset_top = -18209.0
+offset_right = 960.0
+offset_bottom = 13730.0
+texture = ExtResource("2_id3f7")
+stretch_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1830009415]
