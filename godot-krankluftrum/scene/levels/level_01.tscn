@@ -12,3 +12,8 @@ texture = ExtResource("2_81a5f")
 stretch_mode = 1
 
 [node name="Player" parent="." unique_id=2021651750 instance=ExtResource("2_4vyon")]
+motion_mode = 1
+SPEED = 500
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=433599207]
+position = Vector2(1013, 543)
