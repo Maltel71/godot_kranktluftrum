@@ -22,10 +22,10 @@ window/size/viewport_height=1080
 [file_customization]
 
 folder_colors={
+"res://Components/": "orange",
 "res://characters/": "red",
 "res://scene/": "green",
 "res://script/": "blue",
-"res://script/Components/": "orange",
 "res://ui/": "gray"
 }
 

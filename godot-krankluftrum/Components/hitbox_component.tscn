@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ci2vq00l70rtm"]
 
-[ext_resource type="Script" uid="uid://o8a6n58anoph" path="res://script/hitbox_Component.gd" id="1_1mpc5"]
+[ext_resource type="Script" uid="uid://o8a6n58anoph" path="res://script/hitbox_Component.gd" id="1_0jo6v"]
 
 [node name="Area2D" type="Area2D" unique_id=961648676]
-script = ExtResource("1_1mpc5")
+script = ExtResource("1_0jo6v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=506089954]
