@@ -24,7 +24,8 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_id3f7"]
 resource_name = "ground_anim_01"
-length = 120.0
+length = 240.0
+step = 1.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -32,7 +33,7 @@ tracks/0/path = NodePath("GroundParent:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 120),
+"times": PackedFloat32Array(0, 240),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 30859)]
@@ -52,8 +53,8 @@ _data = {
 z_index = -50
 material = SubResource("ShaderMaterial_7ysq4")
 offset_top = -30859.0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_right = 1080.0
+offset_bottom = 1920.0
 texture = ExtResource("2_id3f7")
 stretch_mode = 1
 

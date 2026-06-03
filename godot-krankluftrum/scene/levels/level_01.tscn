@@ -1,15 +1,8 @@
 [gd_scene format=3 uid="uid://cp66trlqj2lsc"]
 
 [ext_resource type="PackedScene" uid="uid://ci0i0oufbx222" path="res://characters/player_test.tscn" id="2_4vyon"]
-[ext_resource type="Texture2D" path="res://enemy01_01 Color.png" id="2_81a5f"]
 
 [node name="Level_01" type="Node2D" unique_id=1615460134]
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=2122092912]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("2_81a5f")
-stretch_mode = 1
 
 [node name="Player" parent="." unique_id=2021651750 instance=ExtResource("2_4vyon")]
 motion_mode = 1

@@ -5,11 +5,9 @@
 
 [node name="Level_01" type="Node2D" unique_id=1615460134]
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=2122092912]
-offset_right = 40.0
-offset_bottom = 40.0
-stretch_mode = 1
-
-[node name="Player" parent="." unique_id=2021651750 instance=ExtResource("1_lvq8m")]
-
 [node name="Ground_01" parent="." unique_id=1836832381 instance=ExtResource("2_rmhvr")]
+position = Vector2(0, 840)
+
+[node name="Player" parent="." unique_id=1867202989 instance=ExtResource("1_lvq8m")]
+position = Vector2(586, 904)
+SPEED = 700
