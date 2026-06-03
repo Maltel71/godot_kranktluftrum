@@ -8,12 +8,12 @@ signal Died
 signal Health_Changed
 func _ready():
 	current_health = MAX_HEALTH
-	max(0, current_health - Damage)
 	emit_signal("Health_Changed")
 
 func Damage(Hit: HIT):
-	current_health -= Hit.Attack_Damage
+	max(0, current_health - Damage)
 	emit_signal("Health_Changed")
+
 
 	if current_health <= 0:
 		emit_signal("Died")

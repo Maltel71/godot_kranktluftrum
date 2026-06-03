@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ci0i0oufbx222"]
+
+[ext_resource type="PackedScene" uid="uid://b8jsju0de67fo" path="res://Components/player_component.tscn" id="1_n7kf0"]
+[ext_resource type="PackedScene" uid="uid://ci2vq00l70rtm" path="res://Components/hitbox_component.tscn" id="2_d4q18"]
+[ext_resource type="PackedScene" uid="uid://ddmrx6b1h2dk2" path="res://Components/health_component.tscn" id="3_gwlvq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrsmg"]
+
+[node name="Player" type="Node2D" unique_id=2021651750]
+
+[node name="PlayerComponent" parent="." unique_id=505214635 instance=ExtResource("1_n7kf0")]
+motion_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerComponent" unique_id=126315932]
+shape = SubResource("RectangleShape2D_xrsmg")
+
+[node name="HealthComponent" parent="." unique_id=324514802 instance=ExtResource("3_gwlvq")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=586288730]
+
+[node name="Hitbox" parent="." unique_id=961648676 instance=ExtResource("2_d4q18")]

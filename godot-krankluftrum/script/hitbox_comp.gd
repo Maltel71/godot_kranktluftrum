@@ -1,8 +1,8 @@
 extends Area2D
 class_name HitboxComp
 
-@export var HealthComp : HealthComp
+@export var HealthComponent : HealthComp
 
 func Damage(Hit: HIT):
 	if HealthComp:
-		HealthComp.Damage(Hit)
+		HealthComponent.Damage(Hit)
