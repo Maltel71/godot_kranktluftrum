@@ -7,16 +7,56 @@
 shader = ExtResource("1_a4eok")
 shader_parameter/tiling = Vector2(1, 1)
 
-[node name="Ground_01" type="Node2D" unique_id=1836832381]
-metadata/_edit_lock_ = true
+[sub_resource type="Animation" id="Animation_a4eok"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GroundParent:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1386942384]
+[sub_resource type="Animation" id="Animation_id3f7"]
+resource_name = "ground_anim_01"
+length = 120.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GroundParent:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 120),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 30859)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ysq4"]
+_data = {
+&"RESET": SubResource("Animation_a4eok"),
+&"ground_anim_01": SubResource("Animation_id3f7")
+}
+
+[node name="Ground_01" type="Node2D" unique_id=1836832381]
+
+[node name="GroundParent" type="Node2D" parent="." unique_id=1142275628]
+
+[node name="TextureRect" type="TextureRect" parent="GroundParent" unique_id=1386942384]
+z_index = -50
 material = SubResource("ShaderMaterial_7ysq4")
-offset_left = -960.0
-offset_top = -18209.0
-offset_right = 960.0
-offset_bottom = 13730.0
+offset_top = -30859.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = ExtResource("2_id3f7")
 stretch_mode = 1
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1830009415]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1662491369]
+libraries/ = SubResource("AnimationLibrary_7ysq4")
+autoplay = &"ground_anim_01"

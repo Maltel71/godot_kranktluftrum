@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1n24qw4j08x1"
-path="res://.godot/imported/enemy01_01 Color.png-623fe847721c05c94dbe7bf74d1ded0b.ctex"
+uid="uid://d07r8guo6cio2"
+path="res://.godot/imported/saabforicon.png-d35377d5f08ceea3fe67236fd485d678.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/enemy01_01 Color.png"
-dest_files=["res://.godot/imported/enemy01_01 Color.png-623fe847721c05c94dbe7bf74d1ded0b.ctex"]
+source_file="res://textures/saabforicon.png"
+dest_files=["res://.godot/imported/saabforicon.png-d35377d5f08ceea3fe67236fd485d678.ctex"]
 
 [params]
 

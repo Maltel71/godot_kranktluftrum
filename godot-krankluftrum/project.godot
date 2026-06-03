@@ -12,7 +12,8 @@ config_version=5
 
 config/name="godot_krankluftrum"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://textures/icon.svg"
+boot_splash/image="uid://d07r8guo6cio2"
+config/icon="uid://d07r8guo6cio2"
 
 [display]
 
