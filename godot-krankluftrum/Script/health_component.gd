@@ -11,7 +11,7 @@ func _ready():
 	emit_signal("Health_Changed")
 	
 func Damage(Hit: HIT):
-	Health -= Hit.Hit_Damage
+	Health -= Hit.Attack_Damage
 	emit_signal("Health_Changed")
 	
 	
