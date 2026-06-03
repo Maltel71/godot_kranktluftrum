@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dxsu8wm5hwqo6"]
+
+[ext_resource type="Theme" uid="uid://cjrhtgheyljp2" path="res://ui/theme_01.tres" id="1_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://fyxeqheub0u" path="res://textures/playertexture_ph.png" id="2_7vrkn"]
+
+[node name="Control" type="Control" unique_id=1264443317]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=1291138279]
+layout_mode = 0
+offset_right = 1080.0
+offset_bottom = 1920.0
+theme = ExtResource("1_7vrkn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=424574980]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -575.0
+offset_right = 375.0
+offset_bottom = 442.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_7vrkn")
+
+[node name="Header" type="Label" parent="VBoxContainer" unique_id=1213448904]
+layout_mode = 2
+text = "KRÄNKT
+LUFTRUM"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=358003130]
+layout_mode = 2
+text = "Start"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=802539562]
+layout_mode = 2
+text = "Options"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=825407488]
+layout_mode = 2
+text = "Quit"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=1128077784]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_7vrkn")
+stretch_mode = 2

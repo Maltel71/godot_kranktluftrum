@@ -1,0 +1,11 @@
+[gd_resource type="Theme" format=3 uid="uid://cjrhtgheyljp2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3luom"]
+bg_color = Color(0.33928734, 0.33310366, 0.20822898, 1)
+
+[resource]
+Button/font_sizes/font_size = 90
+Label/colors/font_color = Color(0.9541488, 0.6671581, 0, 1)
+Label/font_sizes/font_size = 160
+Panel/styles/panel = SubResource("StyleBoxFlat_3luom")
+VBoxContainer/constants/separation = 60
