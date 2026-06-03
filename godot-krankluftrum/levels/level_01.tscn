@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cp66trlqj2lsc"]
+
+[ext_resource type="Shader" uid="uid://gi4f2fbp5ho1" path="res://levels/scrolling_ground.gdshader" id="1_mckh2"]
+[ext_resource type="Texture2D" uid="uid://1n24qw4j08x1" path="res://enemy01_01 Color.png" id="2_81a5f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gg43x"]
+shader = ExtResource("1_mckh2")
+shader_parameter/scroll_speed = Vector2(0, -0.1)
+
+[node name="Level_01" type="Node2D" unique_id=1615460134]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1091765622]
+position = Vector2(960, 540)
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2122092912]
+material = SubResource("ShaderMaterial_gg43x")
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_81a5f")
+stretch_mode = 1
