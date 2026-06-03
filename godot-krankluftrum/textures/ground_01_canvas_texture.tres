@@ -1,0 +1,6 @@
+[gd_resource type="CanvasTexture" format=3 uid="uid://dg6e1h7ss8ndv"]
+
+[ext_resource type="Texture2D" uid="uid://dlcvt1pmxdpch" path="res://textures/spriteatlas_ground_texture.png" id="1_7il01"]
+
+[resource]
+diffuse_texture = ExtResource("1_7il01")
