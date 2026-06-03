@@ -4,7 +4,5 @@
 
 [node name="Projectile" type="Area2D" unique_id=1212457493]
 script = ExtResource("1_pps8e")
-Bullet_Speed = null
-is_missile = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=423583314]

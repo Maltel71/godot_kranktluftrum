@@ -11,9 +11,9 @@ func _ready():
 	emit_signal("Health_Changed")
 
 func Damage(Hit: HIT):
-	max(0, current_health - Damage)
+	current_health = max(0, current_health - Hit.Damage)
 	emit_signal("Health_Changed")
 
-
+func _process(delta: float) -> void:
 	if current_health <= 0:
 		emit_signal("Died")

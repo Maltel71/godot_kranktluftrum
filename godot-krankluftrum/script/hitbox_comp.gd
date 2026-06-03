@@ -4,5 +4,5 @@ class_name HitboxComp
 @export var HealthComponent : HealthComp
 
 func Damage(Hit: HIT):
-	if HealthComp:
+	if HealthComponent:
 		HealthComponent.Damage(Hit)
