@@ -13,5 +13,6 @@ class_name ShootComp
 #add_child(Bullet)
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_pressed("Shoot")
-		FIRE
+	if Input.is_action_pressed("Shoot"):
+		print("FIRE")
+		return

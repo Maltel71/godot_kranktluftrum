@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cp66trlqj2lsc"]
 
 [ext_resource type="PackedScene" uid="uid://ci0i0oufbx222" path="res://characters/player_test.tscn" id="2_4vyon"]
-[ext_resource type="Texture2D" uid="uid://1n24qw4j08x1" path="res://enemy01_01 Color.png" id="2_81a5f"]
+[ext_resource type="Texture2D" path="res://enemy01_01 Color.png" id="2_81a5f"]
 
 [node name="Level_01" type="Node2D" unique_id=1615460134]
 
