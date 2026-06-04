@@ -4,6 +4,8 @@ class_name Projectile
 @export_category("Bullet")
 @export var Bullet_Speed: float = 300.0
 @export var Damage: int = 10
+@export var Bullet_Timer: int = 5
+
 
 @export_category("Missile")
 @export var is_missile: bool = false

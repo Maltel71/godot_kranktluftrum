@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://bvoy0i6ee6302"]
 
 [ext_resource type="Script" uid="uid://hkmg7uuqn0xo" path="res://script/projectile_comp.gd" id="1_pps8e"]
+[ext_resource type="Texture2D" uid="uid://dy1vk8hmnl73f" path="res://textures/icon.svg" id="2_8jt40"]
 
 [node name="Projectile" type="Area2D" unique_id=1212457493]
 script = ExtResource("1_pps8e")
+Bullet_Speed = 50.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=423583314]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=119980786]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_8jt40")
