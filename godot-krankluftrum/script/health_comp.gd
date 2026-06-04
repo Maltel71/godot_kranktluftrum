@@ -15,3 +15,4 @@ func Damage(amount: int):
 	emit_signal("Health_Changed")
 	if current_health <= 0:
 		emit_signal("Died")
+		print("Died")

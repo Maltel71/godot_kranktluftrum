@@ -25,7 +25,8 @@ texture = ExtResource("2_o8yth")
 [node name="ShootComp" parent="." unique_id=238969355 node_paths=PackedStringArray("barrels") instance=ExtResource("3_d4q18")]
 bullet_scene = ExtResource("4_gwlvq")
 barrels = [NodePath("../Marker2D")]
-Projectile_Layer = 5
+Projectile_Layer = 6
+Projectile_Mask = 5
 is_player = true
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1691115109]
@@ -35,7 +36,8 @@ position = Vector2(0, -117)
 bullet_scene = ExtResource("4_gwlvq")
 barrels = [NodePath("../Marker2D3"), NodePath("../Marker2D2")]
 FireRate = 50.0
-Projectile_Layer = 5
+Projectile_Layer = 6
+Projectile_Mask = 5
 is_player = true
 
 [node name="Marker2D2" type="Marker2D" parent="." unique_id=1987996955]
@@ -45,6 +47,8 @@ position = Vector2(36, -40)
 position = Vector2(-34, -40)
 
 [node name="Hitbox" parent="." unique_id=961648676 instance=ExtResource("5_xrsmg")]
+collision_layer = 8
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1425468166]
 shape = SubResource("CapsuleShape2D_vhkeo")

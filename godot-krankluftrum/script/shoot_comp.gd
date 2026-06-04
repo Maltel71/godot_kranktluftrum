@@ -8,6 +8,7 @@ enum ShootMode { FIXED, AIMED, MISSILE }
 @export var shoot_mode: ShootMode = ShootMode.FIXED
 @export var FireRate: float = 10.0
 @export var Projectile_Layer: int = 1
+@export var Projectile_Mask: int = 1
 @export var is_player: bool = false
 
 var _cooldown: float = 0.0
@@ -52,3 +53,4 @@ func _fire() -> void:
 					bullet.target = player
 
 		bullet.collision_layer = 1 << (Projectile_Layer - 1)
+		bullet.collision_mask = 1 << (Projectile_Mask - 1)
