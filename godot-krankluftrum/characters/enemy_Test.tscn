@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://d0m0283aqpmss"]
+
+[ext_resource type="Script" uid="uid://dsiqq6efp5ehl" path="res://script/enemy_comp.gd" id="1_71brl"]
+[ext_resource type="Texture2D" uid="uid://c4mxcdyty7jhj" path="res://textures/0000.png" id="2_bkoem"]
+[ext_resource type="PackedScene" uid="uid://ci2vq00l70rtm" path="res://Components/hitbox_comp.tscn" id="3_pd5mt"]
+[ext_resource type="PackedScene" uid="uid://ddmrx6b1h2dk2" path="res://Components/health_comp.tscn" id="4_g04h1"]
+[ext_resource type="PackedScene" uid="uid://dgkhmels0d3py" path="res://Components/shoot_comp.tscn" id="5_r4acc"]
+[ext_resource type="PackedScene" uid="uid://bvoy0i6ee6302" path="res://Components/projectile_Comp.tscn" id="6_weaj3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_umcqd"]
+radius = 4.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1g8n"]
+size = Vector2(144.24979, 144.2498)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bwqw"]
+size = Vector2(462, 484)
+
+[node name="EnemyComp" type="CharacterBody2D" unique_id=946205871 node_paths=PackedStringArray("ShootComponent", "Detection_Zone")]
+script = ExtResource("1_71brl")
+ShootComponent = NodePath("ShootComp")
+FireAttempt = 50.0
+Detection_Zone = NodePath("Detection_Zone")
+metadata/_custom_type_script = "uid://dsiqq6efp5ehl"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2034418865]
+shape = SubResource("CircleShape2D_umcqd")
+
+[node name="0000" type="Sprite2D" parent="." unique_id=1986352531]
+rotation = -1.5707964
+texture = ExtResource("2_bkoem")
+
+[node name="Hitbox" parent="." unique_id=961648676 node_paths=PackedStringArray("HealthComponent") instance=ExtResource("3_pd5mt")]
+HealthComponent = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=2023605038]
+position = Vector2(9.536743e-07, -25)
+rotation = 0.7853982
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_f1g8n")
+
+[node name="HealthComponent" parent="." unique_id=324514802 instance=ExtResource("4_g04h1")]
+
+[node name="ShootComp" parent="." unique_id=238969355 node_paths=PackedStringArray("barrels") instance=ExtResource("5_r4acc")]
+bullet_scene = ExtResource("6_weaj3")
+barrels = [NodePath("Marker2D"), NodePath("Marker2D2")]
+FireRate = 20.0
+Projectile_Layer = 5
+Projectile_Mask = 4
+
+[node name="Marker2D" type="Marker2D" parent="ShootComp" unique_id=298190560]
+position = Vector2(-35, 50)
+
+[node name="Marker2D2" type="Marker2D" parent="ShootComp" unique_id=1072261625]
+position = Vector2(35, 49)
+
+[node name="Detection_Zone" type="Area2D" parent="." unique_id=1480222522]
+position = Vector2(0, 249)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection_Zone" unique_id=1959870273]
+shape = SubResource("RectangleShape2D_4bwqw")

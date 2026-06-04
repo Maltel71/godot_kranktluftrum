@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://b2l8ime2t7swu"]
-
-[ext_resource type="Script" uid="uid://mlcjbm3p48tr" path="res://script/flare_comp.gd" id="1_ho7ax"]
-
-[node name="flare_comp" type="Node2D" unique_id=1977711316]
-script = ExtResource("1_ho7ax")

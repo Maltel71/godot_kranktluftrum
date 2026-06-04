@@ -1,20 +1,7 @@
 [gd_scene format=3 uid="uid://cp66trlqj2lsc"]
 
 [ext_resource type="PackedScene" uid="uid://ci0i0oufbx222" path="res://characters/player_test.tscn" id="2_4vyon"]
-[ext_resource type="Texture2D" uid="uid://dy1vk8hmnl73f" path="res://textures/icon.svg" id="2_842rx"]
-[ext_resource type="PackedScene" uid="uid://ddmrx6b1h2dk2" path="res://Components/health_comp.tscn" id="3_lib6d"]
-[ext_resource type="PackedScene" uid="uid://ci2vq00l70rtm" path="res://Components/hitbox_comp.tscn" id="4_dyhhw"]
-[ext_resource type="PackedScene" uid="uid://fi28q1yl0qhg" path="res://Components/enemy_comp.tscn" id="5_tqd46"]
-[ext_resource type="PackedScene" uid="uid://dgkhmels0d3py" path="res://Components/shoot_comp.tscn" id="6_yfajs"]
-[ext_resource type="PackedScene" uid="uid://bvoy0i6ee6302" path="res://Components/projectile_Comp.tscn" id="7_wc0mg"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_842rx"]
-size = Vector2(126, 125)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_tqd46"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfajs"]
-size = Vector2(1576, 876)
+[ext_resource type="PackedScene" uid="uid://d0m0283aqpmss" path="res://characters/enemy_Test.tscn" id="2_dc1xo"]
 
 [node name="Level_01" type="Node2D" unique_id=1615460134]
 
@@ -26,41 +13,5 @@ SPEED = 500
 [node name="Camera2D" type="Camera2D" parent="." unique_id=433599207]
 position = Vector2(1013, 543)
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=303484465]
-position = Vector2(1034, -108)
-texture = ExtResource("2_842rx")
-
-[node name="HealthComponent" parent="Icon" unique_id=324514802 instance=ExtResource("3_lib6d")]
-
-[node name="Hitbox" parent="Icon" unique_id=961648676 node_paths=PackedStringArray("HealthComponent") instance=ExtResource("4_dyhhw")]
-collision_layer = 16
-collision_mask = 240
-HealthComponent = NodePath("../HealthComponent")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/Hitbox" unique_id=2085926574]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_842rx")
-
-[node name="EnemyComponent" parent="Icon" unique_id=1464323232 node_paths=PackedStringArray("ShootComponent", "Detection_Zone") instance=ExtResource("5_tqd46")]
-ShootComponent = NodePath("ShootComp")
-Detection_Zone = NodePath("Area2D")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/EnemyComponent" unique_id=608908291]
-shape = SubResource("CircleShape2D_tqd46")
-
-[node name="ShootComp" parent="Icon/EnemyComponent" unique_id=238969355 node_paths=PackedStringArray("barrels") instance=ExtResource("6_yfajs")]
-bullet_scene = ExtResource("7_wc0mg")
-barrels = [NodePath("Marker2D")]
-
-[node name="Marker2D" type="Marker2D" parent="Icon/EnemyComponent/ShootComp" unique_id=2085507698]
-position = Vector2(4, 109)
-rotation = 3.1415927
-
-[node name="Area2D" type="Area2D" parent="Icon/EnemyComponent" unique_id=203884332]
-collision_layer = 32768
-collision_mask = 65535
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/EnemyComponent/Area2D" unique_id=1222298196]
-shape = SubResource("RectangleShape2D_yfajs")
-
-[editable path="Icon/Hitbox"]
+[node name="EnemyComp" parent="." unique_id=946205871 instance=ExtResource("2_dc1xo")]
+position = Vector2(984, -242)
