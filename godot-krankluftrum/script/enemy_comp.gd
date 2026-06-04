@@ -16,15 +16,24 @@ func _ready() -> void:
 	Detection_Zone.body_entered.connect(_on_body_entered)
 	Detection_Zone.body_exited.connect(_on_body_exited)
 func _on_body_entered(body):
-		if body.is_in_group("Player"):
-			player_in_range = true
-			print("player_Entered")
+	if body.is_in_group("Player"):
+		player_in_range = true
+		print("Player_Entered")
 func _on_body_exited(body):
-	if body.is_in_group("player"):
+	if body.is_in_group("Player"):
 		player_in_range = false
 		print("Player left :( ")
 
 func _process(delta: float) -> void:
+	var player = get_tree().get_first_node_in_group("Player")
+	if player == null:
+		return
+	match Enemy_Type:
+		EnemyType.Heli:
+			look_at(player.global_position)
+		EnemyType.Missile_Launcher:
+			if Missile_Turret:
+				Missile_Turret.look_at(player.global_position)
 	_cooldown -= delta
 	if player_in_range and _cooldown <= 0.0:
 		ShootComponent.enemy_try_fire()
