@@ -4,7 +4,3 @@
 
 [node name="EnemyComponent" type="CharacterBody2D" unique_id=1464323232]
 script = ExtResource("1_g0tqj")
-Enemy_Type = null
-FireAttempt = null
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1329448526]

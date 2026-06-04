@@ -41,6 +41,8 @@ func _fire() -> void:
 		match shoot_mode:
 			ShootMode.FIXED:
 				bullet.direction = Vector2.UP
+				if is_player == false:
+					bullet.direction = Vector2.DOWN
 			ShootMode.AIMED:
 				if player != null:
 					bullet.direction = barrel.global_position.direction_to(player.global_position)
