@@ -30,7 +30,7 @@ func _fire() -> void:
 	if bullet_scene == null:
 		return
 
-	var player = get_tree().get_first_node_in_group("player")
+	var player = get_tree().get_first_node_in_group("Player")
 	var level_root = get_tree().current_scene
 
 	for barrel in barrels:
