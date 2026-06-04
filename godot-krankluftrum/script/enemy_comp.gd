@@ -18,11 +18,9 @@ func _ready() -> void:
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
 		player_in_range = true
-		print("Player_Entered")
 func _on_body_exited(body):
 	if body.is_in_group("Player"):
 		player_in_range = false
-		print("Player left :( ")
 
 func _process(delta: float) -> void:
 	var player = get_tree().get_first_node_in_group("Player")

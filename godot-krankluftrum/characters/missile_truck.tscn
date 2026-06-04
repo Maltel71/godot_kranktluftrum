@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dpcni053d4meg"]
+
+[ext_resource type="Script" uid="uid://dsiqq6efp5ehl" path="res://script/enemy_comp.gd" id="1_b3ucx"]
+[ext_resource type="Texture2D" uid="uid://cgcx3xyymd4bm" path="res://textures/missile_Truck.png" id="2_5oo4x"]
+[ext_resource type="Texture2D" uid="uid://6kf5q1awyiap" path="res://textures/missile_Turret.png" id="3_lknka"]
+[ext_resource type="PackedScene" uid="uid://ci2vq00l70rtm" path="res://Components/hitbox_comp.tscn" id="4_temns"]
+[ext_resource type="PackedScene" uid="uid://ddmrx6b1h2dk2" path="res://Components/health_comp.tscn" id="5_0xk5e"]
+[ext_resource type="PackedScene" uid="uid://dgkhmels0d3py" path="res://Components/shoot_comp.tscn" id="6_yu7db"]
+[ext_resource type="PackedScene" uid="uid://bvoy0i6ee6302" path="res://Components/projectile_Comp.tscn" id="7_5tk7x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lfvod"]
+radius = 18.110771
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4uha1"]
+radius = 216.45323
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1tkg4"]
+radius = 1074.5381
+
+[node name="missile_truck" type="CharacterBody2D" unique_id=16506537 node_paths=PackedStringArray("ShootComponent", "Detection_Zone", "Missile_Turret")]
+script = ExtResource("1_b3ucx")
+ShootComponent = NodePath("ShootComp")
+Enemy_Type = 1
+Detection_Zone = NodePath("Detection")
+Missile_Turret = NodePath("MissileTruck/MissileTurret")
+metadata/_custom_type_script = "uid://dsiqq6efp5ehl"
+
+[node name="MissileTruck" type="Sprite2D" parent="." unique_id=1570451210]
+position = Vector2(79, 0)
+texture = ExtResource("2_5oo4x")
+
+[node name="MissileTurret" type="Sprite2D" parent="MissileTruck" unique_id=1081051948]
+position = Vector2(-79, 0)
+texture = ExtResource("3_lknka")
+offset = Vector2(51.045, 0)
+
+[node name="Marker2D" type="Marker2D" parent="MissileTruck/MissileTurret" unique_id=1061616988]
+position = Vector2(106, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1555076284]
+position = Vector2(75, 0)
+shape = SubResource("CircleShape2D_lfvod")
+
+[node name="Hitbox" parent="." unique_id=961648676 node_paths=PackedStringArray("HealthComponent") instance=ExtResource("4_temns")]
+collision_mask = 240
+HealthComponent = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=902287442]
+position = Vector2(77, 0)
+shape = SubResource("CircleShape2D_4uha1")
+
+[node name="HealthComponent" parent="." unique_id=324514802 instance=ExtResource("5_0xk5e")]
+
+[node name="ShootComp" parent="." unique_id=238969355 node_paths=PackedStringArray("barrels") instance=ExtResource("6_yu7db")]
+bullet_scene = ExtResource("7_5tk7x")
+barrels = [NodePath("../MissileTruck/MissileTurret/Marker2D")]
+shoot_mode = 2
+Projectile_Layer = 5
+Projectile_Mask = 4
+
+[node name="Detection" type="Area2D" parent="." unique_id=28142281]
+collision_mask = 65535
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection" unique_id=1954874782]
+position = Vector2(76, 0)
+shape = SubResource("CircleShape2D_1tkg4")

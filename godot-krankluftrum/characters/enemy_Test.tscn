@@ -13,13 +13,12 @@ radius = 4.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1g8n"]
 size = Vector2(144.24979, 144.2498)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bwqw"]
-size = Vector2(1518, 1256)
+[sub_resource type="CircleShape2D" id="CircleShape2D_71brl"]
+radius = 1009.1115
 
 [node name="EnemyComp" type="CharacterBody2D" unique_id=946205871 node_paths=PackedStringArray("ShootComponent", "Detection_Zone")]
 script = ExtResource("1_71brl")
 ShootComponent = NodePath("ShootComp")
-Enemy_Type = 2
 FireAttempt = 50.0
 Detection_Zone = NodePath("Detection_Zone")
 metadata/_custom_type_script = "uid://dsiqq6efp5ehl"
@@ -45,7 +44,6 @@ shape = SubResource("RectangleShape2D_f1g8n")
 [node name="ShootComp" parent="." unique_id=238969355 node_paths=PackedStringArray("barrels") instance=ExtResource("5_r4acc")]
 bullet_scene = ExtResource("6_weaj3")
 barrels = [NodePath("Marker2D"), NodePath("Marker2D2")]
-shoot_mode = 1
 FireRate = 20.0
 Projectile_Layer = 5
 Projectile_Mask = 4
@@ -60,4 +58,4 @@ position = Vector2(35, 49)
 collision_mask = 65535
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection_Zone" unique_id=1959870273]
-shape = SubResource("RectangleShape2D_4bwqw")
+shape = SubResource("CircleShape2D_71brl")

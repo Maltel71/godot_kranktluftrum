@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://dngcdpi3yn3ss"]
+
+[ext_resource type="Script" uid="uid://dsiqq6efp5ehl" path="res://script/enemy_comp.gd" id="1_dkm1o"]
+[ext_resource type="Texture2D" uid="uid://cift03nwxwv84" path="res://textures/Heli0000.png" id="2_j118v"]
+[ext_resource type="Texture2D" uid="uid://cgeoghp1ij2uc" path="res://textures/chopper-blades-spinning-400x400.png" id="3_tyu33"]
+[ext_resource type="PackedScene" uid="uid://ci2vq00l70rtm" path="res://Components/hitbox_comp.tscn" id="4_6cokq"]
+[ext_resource type="PackedScene" uid="uid://ddmrx6b1h2dk2" path="res://Components/health_comp.tscn" id="5_ttdc8"]
+[ext_resource type="PackedScene" uid="uid://dgkhmels0d3py" path="res://Components/shoot_comp.tscn" id="6_hnmc2"]
+[ext_resource type="PackedScene" uid="uid://bvoy0i6ee6302" path="res://Components/projectile_Comp.tscn" id="7_5t1mr"]
+
+[sub_resource type="Animation" id="Animation_wnqah"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_pg05e"]
+resource_name = "heli_rotar"
+length = 0.5
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v78je"]
+_data = {
+&"RESET": SubResource("Animation_wnqah"),
+&"heli_rotar": SubResource("Animation_pg05e")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ehv7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyrth"]
+size = Vector2(58, 171)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_35akj"]
+radius = 980.1306
+
+[node name="Heli_Enemy" type="CharacterBody2D" unique_id=1743904399 node_paths=PackedStringArray("ShootComponent", "Detection_Zone")]
+script = ExtResource("1_dkm1o")
+ShootComponent = NodePath("ShootComp")
+Enemy_Type = 2
+Detection_Zone = NodePath("Area2D")
+metadata/_custom_type_script = "uid://dsiqq6efp5ehl"
+
+[node name="Heli0000" type="Sprite2D" parent="." unique_id=480007351]
+position = Vector2(-53, -1)
+rotation = -1.5707964
+texture = ExtResource("2_j118v")
+
+[node name="ChopperBladesSpinning400x400" type="Sprite2D" parent="Heli0000" unique_id=408568330]
+position = Vector2(0, 53.91)
+texture = ExtResource("3_tyu33")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Heli0000/ChopperBladesSpinning400x400" unique_id=1155609592]
+libraries/ = SubResource("AnimationLibrary_v78je")
+autoplay = &"heli_rotar"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=682849783]
+shape = SubResource("CircleShape2D_2ehv7")
+
+[node name="Hitbox" parent="." unique_id=961648676 node_paths=PackedStringArray("HealthComponent") instance=ExtResource("4_6cokq")]
+HealthComponent = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=221669808]
+position = Vector2(0, -31.5)
+shape = SubResource("RectangleShape2D_uyrth")
+
+[node name="HealthComponent" parent="." unique_id=324514802 instance=ExtResource("5_ttdc8")]
+
+[node name="ShootComp" parent="." unique_id=238969355 node_paths=PackedStringArray("barrels") instance=ExtResource("6_hnmc2")]
+bullet_scene = ExtResource("7_5t1mr")
+barrels = [NodePath("Marker2D")]
+shoot_mode = 1
+Projectile_Layer = 5
+Projectile_Mask = 4
+
+[node name="Marker2D" type="Marker2D" parent="ShootComp" unique_id=395028263]
+position = Vector2(50, -1)
+rotation = -1.5707964
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1136766224]
+collision_mask = 65535
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1046818615]
+shape = SubResource("CircleShape2D_35akj")
