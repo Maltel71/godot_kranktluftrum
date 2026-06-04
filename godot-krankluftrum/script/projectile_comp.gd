@@ -17,5 +17,7 @@ func _physics_process(delta: float) -> void:
 	if is_missile and target != null:
 		var steer = global_position.direction_to(target.global_position)
 		direction = direction.lerp(steer, 5.0 * delta).normalized()
-
+	Bullet_Timer -= delta
+	if Bullet_Timer == 0:
+		queue_free()
 	position += direction * Bullet_Speed * delta

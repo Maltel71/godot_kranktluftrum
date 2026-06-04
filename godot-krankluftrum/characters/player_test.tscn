@@ -4,8 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://fyxeqheub0u" path="res://textures/playertexture_ph.png" id="2_o8yth"]
 [ext_resource type="PackedScene" uid="uid://dgkhmels0d3py" path="res://Components/shoot_comp.tscn" id="3_d4q18"]
 [ext_resource type="PackedScene" uid="uid://bvoy0i6ee6302" path="res://Components/projectile_Comp.tscn" id="4_gwlvq"]
+[ext_resource type="PackedScene" uid="uid://ci2vq00l70rtm" path="res://Components/hitbox_comp.tscn" id="5_xrsmg"]
+[ext_resource type="PackedScene" uid="uid://ddmrx6b1h2dk2" path="res://Components/health_comp.tscn" id="6_0cd1j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrsmg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vhkeo"]
+radius = 50.0
+height = 224.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1867202989]
 script = ExtResource("1_d4q18")
@@ -37,3 +43,11 @@ position = Vector2(36, -40)
 
 [node name="Marker2D3" type="Marker2D" parent="." unique_id=449919836]
 position = Vector2(-34, -40)
+
+[node name="Hitbox" parent="." unique_id=961648676 instance=ExtResource("5_xrsmg")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1425468166]
+shape = SubResource("CapsuleShape2D_vhkeo")
+
+[node name="HealthComponent" parent="." unique_id=324514802 instance=ExtResource("6_0cd1j")]
+MAX_HEALTH = 500

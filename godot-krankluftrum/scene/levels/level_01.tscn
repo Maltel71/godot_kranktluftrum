@@ -10,6 +10,7 @@
 [node name="Level_01" type="Node2D" unique_id=1615460134]
 
 [node name="Player" parent="." unique_id=2021651750 instance=ExtResource("2_4vyon")]
+position = Vector2(999, 1066)
 motion_mode = 1
 SPEED = 500
 
@@ -23,6 +24,7 @@ texture = ExtResource("2_842rx")
 [node name="HealthComponent" parent="Icon" unique_id=324514802 instance=ExtResource("3_lib6d")]
 
 [node name="Hitbox" parent="Icon" unique_id=961648676 node_paths=PackedStringArray("HealthComponent") instance=ExtResource("4_dyhhw")]
+collision_mask = 16
 HealthComponent = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/Hitbox" unique_id=2085926574]
