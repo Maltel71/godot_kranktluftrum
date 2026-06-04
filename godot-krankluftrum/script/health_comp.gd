@@ -11,7 +11,7 @@ func _ready():
 	emit_signal("Health_Changed")
 
 func Damage(amount: int):
-	current_health = max(0, current_health - amount.Damage)
+	current_health = max(0, current_health - amount)
 	emit_signal("Health_Changed")
 	if current_health <= 0:
 		emit_signal("Died")

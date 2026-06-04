@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://cp66trlqj2lsc"]
 
 [ext_resource type="PackedScene" uid="uid://ci0i0oufbx222" path="res://characters/player_test.tscn" id="2_4vyon"]
+[ext_resource type="Texture2D" uid="uid://dy1vk8hmnl73f" path="res://textures/icon.svg" id="2_842rx"]
+[ext_resource type="PackedScene" uid="uid://ddmrx6b1h2dk2" path="res://Components/health_comp.tscn" id="3_lib6d"]
+[ext_resource type="PackedScene" uid="uid://ci2vq00l70rtm" path="res://Components/hitbox_comp.tscn" id="4_dyhhw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_842rx"]
 
 [node name="Level_01" type="Node2D" unique_id=1615460134]
 
@@ -10,3 +15,17 @@ SPEED = 500
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=433599207]
 position = Vector2(1013, 543)
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=303484465]
+position = Vector2(1034, -108)
+texture = ExtResource("2_842rx")
+
+[node name="HealthComponent" parent="Icon" unique_id=324514802 instance=ExtResource("3_lib6d")]
+
+[node name="Hitbox" parent="Icon" unique_id=961648676 node_paths=PackedStringArray("HealthComponent") instance=ExtResource("4_dyhhw")]
+HealthComponent = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/Hitbox" unique_id=2085926574]
+shape = SubResource("RectangleShape2D_842rx")
+
+[editable path="Icon/Hitbox"]
