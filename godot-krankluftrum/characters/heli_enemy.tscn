@@ -103,3 +103,5 @@ collision_mask = 65535
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1046818615]
 shape = SubResource("CircleShape2D_35akj")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=591806484]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dv64nikmp0rww"]
 
 [ext_resource type="PackedScene" uid="uid://ci0i0oufbx222" path="res://characters/player_test.tscn" id="1_i8bch"]
-[ext_resource type="PackedScene" uid="uid://d0m0283aqpmss" path="res://characters/enemy_Test.tscn" id="2_dsnjl"]
+[ext_resource type="PackedScene" uid="uid://d0m0283aqpmss" path="res://characters/plane_enemy.tscn" id="2_dsnjl"]
 [ext_resource type="PackedScene" uid="uid://dngcdpi3yn3ss" path="res://characters/heli_enemy.tscn" id="3_hcyr3"]
 [ext_resource type="PackedScene" uid="uid://dpcni053d4meg" path="res://characters/missile_truck.tscn" id="4_ngfy5"]
 
