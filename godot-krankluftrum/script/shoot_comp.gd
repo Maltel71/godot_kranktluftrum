@@ -50,7 +50,7 @@ func _fire() -> void:
 					bullet.direction = Vector2.UP
 			ShootMode.MISSILE:
 				bullet.is_missile = true
-				bullet.direction = Vector2.UP
+				bullet.direction = barrel.global_position.direction_to(player.global_position)
 				if player != null:
 					bullet.target = player
 
