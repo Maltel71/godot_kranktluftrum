@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://o1s3f168wnvk"]
+
+[ext_resource type="Script" uid="uid://dmyt6y7v6uhds" path="res://script/flare.gd" id="1_7i33t"]
+[ext_resource type="Texture2D" uid="uid://dy1vk8hmnl73f" path="res://textures/icon.svg" id="1_iu7kj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tcm0y"]
+radius = 40.311287
+
+[node name="Flare_Test" type="Node2D" unique_id=1514609138 groups=["Flare"]]
+script = ExtResource("1_7i33t")
+Flare_Speed = 5.0
+Delete_Timer = 5.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1903160575 groups=["Flare"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1462417214 groups=["Flare"]]
+shape = SubResource("CircleShape2D_tcm0y")
+
+[node name="Icon" type="Sprite2D" parent="Area2D" unique_id=680393327 groups=["Flare"]]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_iu7kj")

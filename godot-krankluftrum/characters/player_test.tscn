@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://ci0i0oufbx222"]
 
-[ext_resource type="Script" uid="uid://cs750xbcayif2" path="res://script/player_comp.gd" id="1_d4q18"]
+[ext_resource type="Script" uid="uid://djv3stgttrti7" path="res://script/Components/player_comp.gd" id="1_d4q18"]
 [ext_resource type="Texture2D" uid="uid://fyxeqheub0u" path="res://textures/playertexture_ph.png" id="2_o8yth"]
 [ext_resource type="PackedScene" uid="uid://dgkhmels0d3py" path="res://Components/shoot_comp.tscn" id="3_d4q18"]
 [ext_resource type="PackedScene" uid="uid://bvoy0i6ee6302" path="res://Components/projectile_Comp.tscn" id="4_gwlvq"]
 [ext_resource type="PackedScene" uid="uid://ci2vq00l70rtm" path="res://Components/hitbox_comp.tscn" id="5_xrsmg"]
 [ext_resource type="PackedScene" uid="uid://ddmrx6b1h2dk2" path="res://Components/health_comp.tscn" id="6_0cd1j"]
+[ext_resource type="PackedScene" uid="uid://b2l8ime2t7swu" path="res://Components/flare_comp.tscn" id="7_0cd1j"]
+[ext_resource type="PackedScene" uid="uid://o1s3f168wnvk" path="res://characters/flare_test.tscn" id="8_vhkeo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrsmg"]
 
@@ -54,3 +56,13 @@ shape = SubResource("CapsuleShape2D_vhkeo")
 
 [node name="HealthComponent" parent="." unique_id=324514802 instance=ExtResource("6_0cd1j")]
 MAX_HEALTH = 500
+
+[node name="flare_comp" parent="." unique_id=1977711316 node_paths=PackedStringArray("Flare_Ports") instance=ExtResource("7_0cd1j")]
+flare_scene = ExtResource("8_vhkeo")
+Flare_Ports = [NodePath("Marker2D"), NodePath("Marker2D/Marker2D")]
+
+[node name="Marker2D" type="Marker2D" parent="flare_comp" unique_id=1225989221]
+position = Vector2(-110, 12)
+
+[node name="Marker2D" type="Marker2D" parent="flare_comp/Marker2D" unique_id=258913750]
+position = Vector2(223, -2)
