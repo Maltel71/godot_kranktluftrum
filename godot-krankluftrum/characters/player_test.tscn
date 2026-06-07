@@ -27,7 +27,7 @@ texture = ExtResource("2_o8yth")
 [node name="ShootComp" parent="." unique_id=238969355 node_paths=PackedStringArray("barrels") instance=ExtResource("3_d4q18")]
 bullet_scene = ExtResource("4_gwlvq")
 barrels = [NodePath("../Marker2D")]
-Projectile_Layer = 6
+Projectile_Layer = 4
 Projectile_Mask = 5
 is_player = true
 
@@ -36,8 +36,8 @@ position = Vector2(0, -117)
 
 [node name="ShootComp2" parent="." unique_id=1123989968 node_paths=PackedStringArray("barrels") instance=ExtResource("3_d4q18")]
 bullet_scene = ExtResource("4_gwlvq")
-barrels = [NodePath("../Marker2D3"), NodePath("../Marker2D2")]
-Projectile_Layer = 6
+barrels = [NodePath("../Marker2D2"), NodePath("../Marker2D3")]
+Projectile_Layer = 4
 Projectile_Mask = 5
 is_player = true
 
@@ -47,15 +47,15 @@ position = Vector2(36, -40)
 [node name="Marker2D3" type="Marker2D" parent="." unique_id=449919836]
 position = Vector2(-34, -40)
 
-[node name="Hitbox" parent="." unique_id=961648676 instance=ExtResource("5_xrsmg")]
+[node name="Hitbox" parent="." unique_id=961648676 node_paths=PackedStringArray("HealthComponent") instance=ExtResource("5_xrsmg")]
 collision_layer = 8
 collision_mask = 8
+HealthComponent = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1425468166]
 shape = SubResource("CapsuleShape2D_vhkeo")
 
 [node name="HealthComponent" parent="." unique_id=324514802 instance=ExtResource("6_0cd1j")]
-MAX_HEALTH = 500
 
 [node name="flare_comp" parent="." unique_id=1977711316 node_paths=PackedStringArray("Flare_Ports") instance=ExtResource("7_0cd1j")]
 flare_scene = ExtResource("8_vhkeo")

@@ -14,4 +14,4 @@ SPEED = 500
 position = Vector2(1013, 543)
 
 [node name="missile_truck" parent="." unique_id=16506537 instance=ExtResource("4_842rx")]
-position = Vector2(1287, -269)
+position = Vector2(1244, -80)

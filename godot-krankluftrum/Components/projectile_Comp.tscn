@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bvoy0i6ee6302"]
 
-[ext_resource type="Script" uid="uid://hkmg7uuqn0xo" path="res://script/projectile_comp.gd" id="1_pps8e"]
+[ext_resource type="Script" uid="uid://c22gkac5h1d8e" path="res://script/Components/projectile_comp.gd" id="1_8jt40"]
 [ext_resource type="Texture2D" uid="uid://dy1vk8hmnl73f" path="res://textures/icon.svg" id="2_8jt40"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8jt40"]
@@ -8,9 +8,8 @@
 [node name="Projectile" type="Area2D" unique_id=1212457493]
 collision_layer = 247
 collision_mask = 247
-script = ExtResource("1_pps8e")
-Bullet_Speed = 500.0
-Bullet_Timer = 1.0
+script = ExtResource("1_8jt40")
+Bullet_Timer = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=423583314]
 shape = SubResource("RectangleShape2D_8jt40")

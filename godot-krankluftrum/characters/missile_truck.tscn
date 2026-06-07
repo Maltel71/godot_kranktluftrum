@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dpcni053d4meg"]
 
-[ext_resource type="Script" uid="uid://dsiqq6efp5ehl" path="res://script/enemy_comp.gd" id="1_b3ucx"]
+[ext_resource type="Script" uid="uid://5vuylb0tx6b8" path="res://script/Components/enemy_comp.gd" id="1_b3ucx"]
 [ext_resource type="Texture2D" uid="uid://cgcx3xyymd4bm" path="res://textures/missile_Truck.png" id="2_5oo4x"]
 [ext_resource type="Texture2D" uid="uid://6kf5q1awyiap" path="res://textures/missile_Turret.png" id="3_lknka"]
 [ext_resource type="PackedScene" uid="uid://ci2vq00l70rtm" path="res://Components/hitbox_comp.tscn" id="4_temns"]
@@ -23,7 +23,6 @@ ShootComponent = NodePath("ShootComp")
 Enemy_Type = 1
 Detection_Zone = NodePath("Detection")
 Missile_Turret = NodePath("MissileTruck/MissileTurret")
-metadata/_custom_type_script = "uid://dsiqq6efp5ehl"
 
 [node name="MissileTruck" type="Sprite2D" parent="." unique_id=1570451210]
 position = Vector2(79, 0)

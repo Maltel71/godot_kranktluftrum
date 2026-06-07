@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dngcdpi3yn3ss"]
 
-[ext_resource type="Script" uid="uid://dsiqq6efp5ehl" path="res://script/enemy_comp.gd" id="1_dkm1o"]
+[ext_resource type="Script" uid="uid://5vuylb0tx6b8" path="res://script/Components/enemy_comp.gd" id="1_dkm1o"]
 [ext_resource type="Texture2D" uid="uid://cift03nwxwv84" path="res://textures/Heli0000.png" id="2_j118v"]
 [ext_resource type="Texture2D" uid="uid://cgeoghp1ij2uc" path="res://textures/chopper-blades-spinning-400x400.png" id="3_tyu33"]
 [ext_resource type="PackedScene" uid="uid://ci2vq00l70rtm" path="res://Components/hitbox_comp.tscn" id="4_6cokq"]
@@ -60,7 +60,6 @@ script = ExtResource("1_dkm1o")
 ShootComponent = NodePath("ShootComp")
 Enemy_Type = 2
 Detection_Zone = NodePath("Area2D")
-metadata/_custom_type_script = "uid://dsiqq6efp5ehl"
 
 [node name="Heli0000" type="Sprite2D" parent="." unique_id=480007351]
 position = Vector2(-53, -1)
