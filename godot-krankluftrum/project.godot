@@ -15,6 +15,10 @@ config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/image="uid://d07r8guo6cio2"
 config/icon="uid://d07r8guo6cio2"
 
+[autoload]
+
+Randomizer="*uid://bqqm7w8gvudgr"
+
 [display]
 
 window/size/viewport_width=1080

@@ -8,6 +8,7 @@ enum EnemyType { Basic, Missile_Launcher, Heli }
 @export var FireAttempt: float = 2
 @export var Detection_Zone : Area2D
 @export var Missile_Turret : Node2D
+@export var Turn_Speed : float = 0.1 #lower = slower
 
 var player_in_range: bool = false
 var _cooldown: float = 0.0
@@ -24,14 +25,15 @@ func _on_body_exited(body):
 
 func _process(delta: float) -> void:
 	var player = get_tree().get_first_node_in_group("Player")
+	var T = global_position.angle_to_point(player.global_position)
 	if player == null:
 		return
 	match Enemy_Type:
 		EnemyType.Heli:
-			look_at(player.global_position)
+			rotation = lerp_angle(rotation, T, Turn_Speed * delta)
 		EnemyType.Missile_Launcher:
 			if Missile_Turret:
-				Missile_Turret.look_at(player.global_position)
+				Missile_Turret.rotation = lerp_angle(Missile_Turret.rotation, T, Turn_Speed * delta)
 	_cooldown -= delta
 	if player_in_range and _cooldown <= 0.0:
 		ShootComponent.enemy_try_fire()

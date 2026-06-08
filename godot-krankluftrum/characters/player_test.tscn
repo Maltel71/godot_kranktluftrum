@@ -26,25 +26,25 @@ texture = ExtResource("2_o8yth")
 
 [node name="ShootComp" parent="." unique_id=238969355 node_paths=PackedStringArray("barrels") instance=ExtResource("3_d4q18")]
 bullet_scene = ExtResource("4_gwlvq")
-barrels = [NodePath("../Marker2D")]
+barrels = [NodePath("../Middle_Gun")]
 Projectile_Layer = 4
 Projectile_Mask = 5
 is_player = true
 
-[node name="Marker2D" type="Marker2D" parent="." unique_id=1691115109]
+[node name="Middle_Gun" type="Marker2D" parent="." unique_id=1691115109]
 position = Vector2(0, -117)
 
 [node name="ShootComp2" parent="." unique_id=1123989968 node_paths=PackedStringArray("barrels") instance=ExtResource("3_d4q18")]
 bullet_scene = ExtResource("4_gwlvq")
-barrels = [NodePath("../Marker2D2"), NodePath("../Marker2D3")]
+barrels = [NodePath("../Right_Gun"), NodePath("../Left_Gun")]
 Projectile_Layer = 4
 Projectile_Mask = 5
 is_player = true
 
-[node name="Marker2D2" type="Marker2D" parent="." unique_id=1987996955]
+[node name="Right_Gun" type="Marker2D" parent="." unique_id=1987996955]
 position = Vector2(36, -40)
 
-[node name="Marker2D3" type="Marker2D" parent="." unique_id=449919836]
+[node name="Left_Gun" type="Marker2D" parent="." unique_id=449919836]
 position = Vector2(-34, -40)
 
 [node name="Hitbox" parent="." unique_id=961648676 node_paths=PackedStringArray("HealthComponent") instance=ExtResource("5_xrsmg")]
@@ -59,10 +59,12 @@ shape = SubResource("CapsuleShape2D_vhkeo")
 
 [node name="flare_comp" parent="." unique_id=1977711316 node_paths=PackedStringArray("Flare_Ports") instance=ExtResource("7_0cd1j")]
 flare_scene = ExtResource("8_vhkeo")
-Flare_Ports = [NodePath("Marker2D"), NodePath("Marker2D/Marker2D")]
+Flare_Ports = [NodePath("FlarePort_L"), NodePath("FlarePort_R")]
 
-[node name="Marker2D" type="Marker2D" parent="flare_comp" unique_id=1225989221]
+[node name="FlarePort_L" type="Marker2D" parent="flare_comp" unique_id=1225989221]
 position = Vector2(-110, 12)
+rotation = 2.0943952
 
-[node name="Marker2D" type="Marker2D" parent="flare_comp/Marker2D" unique_id=258913750]
-position = Vector2(223, -2)
+[node name="FlarePort_R" type="Marker2D" parent="flare_comp" unique_id=258913750]
+position = Vector2(113, 7)
+rotation = -2.0943952

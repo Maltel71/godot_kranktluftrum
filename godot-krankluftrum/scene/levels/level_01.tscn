@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cp66trlqj2lsc"]
 
 [ext_resource type="PackedScene" uid="uid://ci0i0oufbx222" path="res://characters/player_test.tscn" id="2_4vyon"]
+[ext_resource type="PackedScene" uid="uid://dngcdpi3yn3ss" path="res://characters/heli_enemy.tscn" id="2_dc1xo"]
 [ext_resource type="PackedScene" uid="uid://dpcni053d4meg" path="res://characters/missile_truck.tscn" id="4_842rx"]
 
 [node name="Level_01" type="Node2D" unique_id=1615460134]
@@ -13,5 +14,8 @@ SPEED = 500
 [node name="Camera2D" type="Camera2D" parent="." unique_id=433599207]
 position = Vector2(1013, 543)
 
+[node name="Heli_Enemy" parent="." unique_id=1743904399 instance=ExtResource("2_dc1xo")]
+position = Vector2(1307, -152)
+
 [node name="missile_truck" parent="." unique_id=16506537 instance=ExtResource("4_842rx")]
-position = Vector2(1244, -80)
+position = Vector2(535, -315)
