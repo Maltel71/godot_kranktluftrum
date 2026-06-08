@@ -23,6 +23,7 @@ ShootComponent = NodePath("ShootComp")
 Enemy_Type = 1
 Detection_Zone = NodePath("Detection")
 Missile_Turret = NodePath("MissileTruck/MissileTurret")
+Turn_Speed = 0.5
 
 [node name="MissileTruck" type="Sprite2D" parent="." unique_id=1570451210]
 position = Vector2(79, 0)

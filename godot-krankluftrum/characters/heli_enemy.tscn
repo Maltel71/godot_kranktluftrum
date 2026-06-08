@@ -60,6 +60,7 @@ script = ExtResource("1_dkm1o")
 ShootComponent = NodePath("ShootComp")
 Enemy_Type = 2
 Detection_Zone = NodePath("Area2D")
+Turn_Speed = 2.0
 
 [node name="Heli0000" type="Sprite2D" parent="." unique_id=480007351]
 position = Vector2(-53, -1)
