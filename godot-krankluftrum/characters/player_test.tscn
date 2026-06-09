@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://ddmrx6b1h2dk2" path="res://Components/health_comp.tscn" id="6_0cd1j"]
 [ext_resource type="PackedScene" uid="uid://b2l8ime2t7swu" path="res://Components/flare_comp.tscn" id="7_0cd1j"]
 [ext_resource type="PackedScene" uid="uid://o1s3f168wnvk" path="res://characters/flare_test.tscn" id="8_vhkeo"]
+[ext_resource type="PackedScene" uid="uid://br5i6m4awpj50" path="res://Components/bomb_comp.tscn" id="9_3bmkm"]
+[ext_resource type="PackedScene" uid="uid://be5ejjk82xnrn" path="res://characters/bomb_test.tscn" id="10_e62ar"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrsmg"]
 
@@ -68,3 +70,12 @@ rotation = 2.0943952
 [node name="FlarePort_R" type="Marker2D" parent="flare_comp" unique_id=258913750]
 position = Vector2(113, 7)
 rotation = -2.0943952
+
+[node name="Bomb_Realease_Comp" parent="." unique_id=1907036632 node_paths=PackedStringArray("Release_Point") instance=ExtResource("9_3bmkm")]
+bomb_scene = ExtResource("10_e62ar")
+Release_Point = [NodePath("Marker2D")]
+Projectile_Layer = 6
+Projectile_Mask = 7
+FireRate = 800.0
+
+[node name="Marker2D" type="Marker2D" parent="Bomb_Realease_Comp" unique_id=345330913]

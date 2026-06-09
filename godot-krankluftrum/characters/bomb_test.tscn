@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://be5ejjk82xnrn"]
+
+[ext_resource type="Script" uid="uid://h2v64tiqjkjb" path="res://script/Components/bomb_comp.gd" id="1_7e0cf"]
+[ext_resource type="Texture2D" uid="uid://dy1vk8hmnl73f" path="res://textures/icon.svg" id="2_h4rys"]
+
+[node name="BombTest" type="Node2D" unique_id=2022530592]
+script = ExtResource("1_7e0cf")
+Speed = 1.0
+Deaccelerate = 2.0
+Shrink_Deaccelerate = 0.1
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=886221425]
+texture = ExtResource("2_h4rys")

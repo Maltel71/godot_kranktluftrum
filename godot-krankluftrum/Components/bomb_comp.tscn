@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://br5i6m4awpj50"]
+
+[ext_resource type="Script" uid="uid://bob6vfcqdfmnv" path="res://script/Components/bomb_realease_comp.gd" id="1_5l65a"]
+
+[node name="Bomb_Realease_Comp" type="Node2D" unique_id=1907036632]
+script = ExtResource("1_5l65a")
