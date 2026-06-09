@@ -5,12 +5,12 @@ class_name Bomb
 @export var Shrink_Speed: float = 5.0
 @export var Deaccelerate: float = 8.0
 @export var Shrink_Deaccelerate: float = 8.0
-
+@export var shrink_amount: float = -0.001
 
 var current_speed: float
 var direction: Vector2 = Vector2.UP
-var current_shrink: float
-var size: Vector2
+var current_shrink: float 
+var size: Vector2 = Vector2(shrink_amount,shrink_amount)
 
 func _ready() -> void:
 	current_speed = Speed
